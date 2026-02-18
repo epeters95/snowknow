@@ -1,0 +1,13 @@
+{
+  "locations": [
+    {
+      "id": "mt-lemmon",
+      "name": "Mt Lemmon",
+      "latitude": 32.4426,
+      "longitude": -110.7883,
+      "snowfallThresholdMm": 0.2,
+      "snowDepthThresholdM": 0.01,
+      "enabled": true
+    }
+  ]
+}

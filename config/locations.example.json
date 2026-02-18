@@ -1,0 +1,22 @@
+{
+  "locations": [
+    {
+      "id": "mt-lemmon",
+      "name": "Mt Lemmon",
+      "latitude": 32.4426,
+      "longitude": -110.7883,
+      "snowfallThresholdMm": 0.2,
+      "snowDepthThresholdM": 0.01,
+      "enabled": true
+    },
+    {
+      "id": "mt-baldy",
+      "name": "Mt Baldy",
+      "latitude": 34.2897,
+      "longitude": -117.6467,
+      "snowfallThresholdMm": 0.2,
+      "snowDepthThresholdM": 0.01,
+      "enabled": false
+    }
+  ]
+}
