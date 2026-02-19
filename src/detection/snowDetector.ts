@@ -23,7 +23,7 @@ export const createSnowMessage = (location: LocationConfig, weather: WeatherSnap
   const snowMessage =
     location.triggerType === "any_snow"
       ? `${location.name} looks snowy.`
-      : `${location.name} is getting dusted.`
+      : `${location.name} is getting dusted.`;
 
   return [
     snowMessage,

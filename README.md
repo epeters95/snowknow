@@ -90,7 +90,7 @@ Set in `.env`:
 
 ```bash
 SCHEDULER_MODE=local
-CRON_SCHEDULE=*/30 * * * *
+CRON_SCHEDULE=0 * * * *
 ```
 
 Then run:
@@ -108,7 +108,7 @@ Required repo secrets:
 - `PUSHOVER_APP_TOKEN`
 - `PUSHOVER_USER_KEY`
 
-Default schedule is every 30 minutes.
+Default schedule is every hour.
 
 ## NPM Scripts
 
