@@ -70,13 +70,17 @@ Edit `config/locations.json`:
       "name": "Mt Lemmon",
       "latitude": 32.4426,
       "longitude": -110.7883,
-      "snowfallThresholdMm": 0.2,
-      "snowDepthThresholdM": 0.01,
+      "triggerType": "any_snow",
       "enabled": true
     }
   ]
 }
 ```
+
+Trigger options:
+
+- `triggerType: "any_snow"` uses global thresholds from `src/detection/snowDetector.ts`
+- `triggerType: "new_snowfall"` uses global new snowfall threshold from `src/detection/snowDetector.ts`
 
 ## Scheduling Modes
 

@@ -1,5 +1,6 @@
 export type SchedulerMode = "none" | "local";
 export type CheckSource = "manual" | "scheduler" | "api" | "github-actions";
+export type SnowTriggerType = "any_snow" | "new_snowfall";
 
 export interface EnvConfig {
   PORT: number;
@@ -18,8 +19,7 @@ export interface LocationConfig {
   name: string;
   latitude: number;
   longitude: number;
-  snowfallThresholdMm: number;
-  snowDepthThresholdM: number;
+  triggerType: SnowTriggerType;
   enabled: boolean;
 }
 

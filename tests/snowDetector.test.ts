@@ -1,5 +1,8 @@
 import { describe, expect, test } from "vitest";
-import { isSnowy } from "../src/detection/snowDetector.js";
+import {
+  NEW_SNOWFALL_THRESHOLD_MM,
+  isSnowy
+} from "../src/detection/snowDetector.js";
 import type { LocationConfig } from "../src/types.js";
 
 const baseLocation: LocationConfig = {
@@ -7,8 +10,7 @@ const baseLocation: LocationConfig = {
   name: "Mt Lemmon",
   latitude: 32.4426,
   longitude: -110.7883,
-  snowfallThresholdMm: 0.2,
-  snowDepthThresholdM: 0.01,
+  triggerType: "any_snow",
   enabled: true
 };
 
@@ -37,6 +39,40 @@ describe("isSnowy", () => {
       snowfallMm: 0,
       snowDepthM: 0
     });
+    expect(result).toBe(false);
+  });
+
+  test("supports new snowfall trigger with 1 inch threshold", () => {
+    const location: LocationConfig = {
+      ...baseLocation,
+      id: "arizona-snowbowl",
+      name: "Arizona Snowbowl",
+      triggerType: "new_snowfall"
+    };
+
+    const result = isSnowy(location, {
+      observationTime: "2026-02-18T10:00",
+      snowfallMm: NEW_SNOWFALL_THRESHOLD_MM + 0.1,
+      snowDepthM: 0
+    });
+
+    expect(result).toBe(true);
+  });
+
+  test("new snowfall trigger ignores snow depth-only condition", () => {
+    const location: LocationConfig = {
+      ...baseLocation,
+      id: "sunrise-park-resort",
+      name: "Sunrise Park Resort",
+      triggerType: "new_snowfall"
+    };
+
+    const result = isSnowy(location, {
+      observationTime: "2026-02-18T10:00",
+      snowfallMm: 5,
+      snowDepthM: 1
+    });
+
     expect(result).toBe(false);
   });
 });

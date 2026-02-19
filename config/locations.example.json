@@ -5,18 +5,24 @@
       "name": "Mt Lemmon",
       "latitude": 32.4426,
       "longitude": -110.7883,
-      "snowfallThresholdMm": 0.2,
-      "snowDepthThresholdM": 0.01,
+      "triggerType": "any_snow",
       "enabled": true
     },
     {
-      "id": "mt-baldy",
-      "name": "Mt Baldy",
-      "latitude": 34.2897,
-      "longitude": -117.6467,
-      "snowfallThresholdMm": 0.2,
-      "snowDepthThresholdM": 0.01,
-      "enabled": false
+      "id": "arizona-snowbowl",
+      "name": "Arizona Snowbowl",
+      "latitude": 35.3324,
+      "longitude": -111.7093,
+      "triggerType": "new_snowfall",
+      "enabled": true
+    },
+    {
+      "id": "sunrise-park-resort",
+      "name": "Sunrise Park Resort",
+      "latitude": 33.973,
+      "longitude": -109.5635,
+      "triggerType": "new_snowfall",
+      "enabled": true
     }
   ]
 }
